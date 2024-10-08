@@ -1,0 +1,2 @@
+(()=>{var e={8:(e,r,t)=>{var o=t(398);e.exports={activate:function(e){o.window.showInformationMessage("kjl 提示插件已激活")},deactivate:function(){}}},398:e=>{"use strict";e.exports=require("vscode")}},r={},t=function t(o){var s=r[o];if(void 0!==s)return s.exports;var i=r[o]={exports:{}};return e[o](i,i.exports,t),i.exports}(8);module.exports=t})();
+//# sourceMappingURL=extension.js.map

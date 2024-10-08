@@ -1,0 +1,1467 @@
+{
+  "条件判断 - if": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "    $2",
+      "}"
+    ],
+    "description": "条件判断"
+  },
+  "循环 - for": {
+    "prefix": "for",
+    "body": [
+      "for (int i = 0; i < $1; i++) {",
+      "    $2",
+      "}"
+    ],
+    "description": "循环结构"
+  },
+  "增强 for 循环": {
+    "prefix": "for",
+    "body": [
+      "for (${1:对象类型} ${2:对象名称} : ${3:对象集合}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "增强 for 循环"
+  },
+  "字符串包含 - contains": {
+    "prefix": "contains",
+    "body": [
+      "contains(\"$1\")"
+    ],
+    "description": "判断字符串是否包含子串"
+  },
+  "相等判断 - equals": {
+    "prefix": "equals",
+    "body": [
+      "equals(\"$1\")"
+    ],
+    "description": "判断两个对象是否相等"
+  },
+  "四舍五入 - Math.round": {
+    "prefix": "Math.round",
+    "body": [
+      "int roundedValue = Math.round($1);",
+      "$2"
+    ],
+    "description": "四舍五入到最接近的整数"
+  },
+  "信息输出和模型高亮": {
+    "prefix": "result",
+    "body": [
+      "_result.getList().add(createParamModelResult($1",
+      ", $2));"
+    ],
+    "description": "信息输出和模型高亮"
+  },
+  "Drools 规则模板": {
+    "prefix": "rule",
+    "body": [
+      "rule \"$1\"",
+      "when",
+      "    $2",
+      "then",
+      "    $3",
+      "end"
+    ],
+    "description": "Drools 规则模板"
+  },
+  "规则名称": {
+    "prefix": "rule",
+    "body": [
+      "rule \"$1\""
+    ],
+    "description": "规则名称"
+  },
+  "规则条件": {
+    "prefix": "when",
+    "body": [
+      "when"
+    ],
+    "description": "规则条件"
+  },
+  "规则执行": {
+    "prefix": "then",
+    "body": [
+      "then"
+    ],
+    "description": "规则执行"
+  },
+  "规则结束": {
+    "prefix": "end",
+    "body": [
+      "end"
+    ],
+    "description": "规则结束"
+  },
+  "整数": {
+    "prefix": "Integer",
+    "body": [
+      "Integer $1"
+    ],
+    "description": "整数"
+  },
+  "单精度浮点数": {
+    "prefix": "Float",
+    "body": [
+      "Float $1"
+    ],
+    "description": "单精度浮点数"
+  },
+  "双精度浮点数": {
+    "prefix": "Double",
+    "body": [
+      "Double $1"
+    ],
+    "description": "双精度浮点数"
+  },
+  "字符串": {
+    "prefix": "String",
+    "body": [
+      "String $1"
+    ],
+    "description": "字符串"
+  },
+  "布尔值": {
+    "prefix": "Boolean",
+    "body": [
+      "Boolean $1"
+    ],
+    "description": "布尔值"
+  },
+  "获取下标": {
+    "prefix": "indexOf",
+    "body": [
+      "indexOf(\"$1\")"
+    ],
+    "description": "获取下标"
+  },
+  "从指定位置获取数据": {
+    "prefix": "from",
+    "body": [
+      "from $1"
+    ],
+    "description": "从指定位置获取数据"
+  },
+  "从指定位置收集数据": {
+    "prefix": "from collect()",
+    "body": [
+      "from collect()"
+    ],
+    "description": "从指定位置收集数据"
+  },
+  "条件判断": {
+    "prefix": "eval",
+    "body": [
+      "eval($1)"
+    ],
+    "description": "条件判断"
+  },
+  "自定义函数": {
+    "prefix": "Function",
+    "body": [
+      "// function 返回值类型 函数名称( 接收的对象类型) 例:判断参数是否大于10 true/false",
+      "function boolean isParameterBiggerThan10( FCustomModel model) {",
+      "return model.getParameter().size() > 10;",
+      "}"
+    ],
+    "description": "自定义函数"
+  },
+  "结束循环": {
+    "prefix": "break",
+    "body": [
+      "break"
+    ],
+    "description": "结束循环"
+  },
+  "跳过本次循环": {
+    "prefix": "continue",
+    "body": [
+      "continue"
+    ],
+    "description": "跳过本次循环"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else { }"
+    ],
+    "description": "else"
+  },
+  "创建集合": {
+    "prefix": "List",
+    "body": [
+      "// 创建集合 modelList\nList<$1> modelList = new ArrayList<>();"
+    ],
+    "description": "创建集合"
+  },
+  "集合添加元素": {
+    "prefix": "add",
+    "body": [
+      "add($1)"
+    ],
+    "description": "集合添加元素"
+  },
+  "集合删除元素": {
+    "prefix": "remove",
+    "body": [
+      "remove($1)"
+    ],
+    "description": "集合删除元素"
+  },
+  "添加集合": {
+    "prefix": "addAll",
+    "body": [
+      "addAll($1)"
+    ],
+    "description": "添加集合"
+  },
+  "包含": {
+    "prefix": "contains",
+    "body": [
+      "contains($1)"
+    ],
+    "description": "包含"
+  },
+  "参数化模型(含五金)": {
+    "prefix": "FCustomModel",
+    "body": [
+      "FCustomModel $1"
+    ],
+    "description": "参数化模型(含五金)"
+  },
+  "参数化模型": {
+    "prefix": "FParamModel",
+    "body": [
+      "FParamModel $1"
+    ],
+    "description": "参数化模型"
+  },
+  "虚拟模型": {
+    "prefix": "FVirtualModel",
+    "body": [
+      "FVirtualModel $1"
+    ],
+    "description": "虚拟模型"
+  },
+  "参数化组合": {
+    "prefix": "FParamModelCombination",
+    "body": [
+      "FParamModelCombination $1"
+    ],
+    "description": "参数化组合"
+  },
+  "台面顶层模型": {
+    "prefix": "FCountertopModel",
+    "body": [
+      "FCountertopModel $1"
+    ],
+    "description": "台面顶层模型"
+  },
+  "侧台面块": {
+    "prefix": "FVerticalCountertopBlock",
+    "body": [
+      "FVerticalCountertopBlock $1"
+    ],
+    "description": "侧台面块"
+  },
+  "挡水模型": {
+    "prefix": "FWaterRetainer",
+    "body": [
+      "FWaterRetainer $1"
+    ],
+    "description": "挡水模型"
+  },
+  "水槽模型": {
+    "prefix": "FSinkModel",
+    "body": [
+      "FSinkModel $1"
+    ],
+    "description": "水槽模型"
+  },
+  "灶台模型": {
+    "prefix": "FHearthModel",
+    "body": [
+      "FHearthModel $1"
+    ],
+    "description": "灶台模型"
+  },
+  "参数对象": {
+    "prefix": "FParameter",
+    "body": [
+      "FParameter $1"
+    ],
+    "description": "参数对象"
+  },
+  "商品对象": {
+    "prefix": "FBrandGood",
+    "body": [
+      "FBrandGood $1"
+    ],
+    "description": "商品对象"
+  },
+  "自定义字段": {
+    "prefix": "FCustomField",
+    "body": [
+      "FCustomField $1"
+    ],
+    "description": "自定义字段"
+  },
+  "自定义字段数据": {
+    "prefix": "FCustomFieldData",
+    "body": [
+      "FCustomFieldData $1"
+    ],
+    "description": "自定义字段数据"
+  },
+  "自定义字段选项": {
+    "prefix": "FOption",
+    "body": [
+      "FOption $1"
+    ],
+    "description": "自定义字段选项"
+  },
+  "墙": {
+    "prefix": "FWall",
+    "body": [
+      "FWall $1"
+    ],
+    "description": "墙"
+  },
+  "层": {
+    "prefix": "FLevel",
+    "body": [
+      "FLevel $1"
+    ],
+    "description": "层"
+  },
+  "户型相关元素": {
+    "prefix": "FFloorplanElement",
+    "body": [
+      "FFloorplanElement $1"
+    ],
+    "description": "户型相关元素"
+  },
+  "房间": {
+    "prefix": "FRoom",
+    "body": [
+      "FRoom $1"
+    ],
+    "description": "房间"
+  },
+  "柱子or烟道": {
+    "prefix": "FPillar",
+    "body": [
+      "FPillar $1"
+    ],
+    "description": "柱子or烟道"
+  },
+  "梁": {
+    "prefix": "FBeam",
+    "body": [
+      "FBeam $1"
+    ],
+    "description": "梁"
+  },
+  "方案内模型id": {
+    "prefix": "id",
+    "body": [
+      "id $1"
+    ],
+    "description": "方案内模型id"
+  },
+  "参数化模型id": {
+    "prefix": "paramModelId",
+    "body": [
+      "paramModelId $1"
+    ],
+    "description": "参数化模型id"
+  },
+  "参数化模型版本": {
+    "prefix": "versionId",
+    "body": [
+      "versionId $1"
+    ],
+    "description": "参数化模型版本"
+  },
+  "模型类型id": {
+    "prefix": "modelTypeId",
+    "body": [
+      "modelTypeId $1"
+    ],
+    "description": "模型类型id"
+  },
+  "调用点类型id": {
+    "prefix": "invokedPositionTypeId",
+    "body": [
+      "invokedPositionTypeId $1"
+    ],
+    "description": "调用点类型id"
+  },
+  "模型名称": {
+    "prefix": "name",
+    "body": [
+      "name $1"
+    ],
+    "description": "模型名称"
+  },
+  "模型相对于父模型的真实包尺寸": {
+    "prefix": "size",
+    "body": [
+      "size $1"
+    ],
+    "description": "模型相对于父模型的真实包尺寸"
+  },
+  "商品信息": {
+    "prefix": "brandGood",
+    "body": [
+      "brandGood $1"
+    ],
+    "description": "商品信息"
+  },
+  "参数集合": {
+    "prefix": "parameter",
+    "body": [
+      "parameter $1"
+    ],
+    "description": "参数集合"
+  },
+  "所有参数集合（包含隐藏和不可见的）": {
+    "prefix": "allParameter",
+    "body": [
+      "allParameter $1"
+    ],
+    "description": "所有参数集合（包含隐藏和不可见的）"
+  },
+  "中间变量集合": {
+    "prefix": "constParameter",
+    "body": [
+      "constParameter $1"
+    ],
+    "description": "中间变量集合"
+  },
+  "商品备注": {
+    "prefix": "remark",
+    "body": [
+      "remark $1"
+    ],
+    "description": "商品备注"
+  },
+  "该模型的父模型": {
+    "prefix": "parent",
+    "body": [
+      "parent $1"
+    ],
+    "description": "该模型的父模型"
+  },
+  "非原生组件的主模型": {
+    "prefix": "main",
+    "body": [
+      "main $1"
+    ],
+    "description": "非原生组件的主模型"
+  },
+  "工具中添加的组件": {
+    "prefix": "accessoryModels",
+    "body": [
+      "accessoryModels $1"
+    ],
+    "description": "工具中添加的组件"
+  },
+  "指定参数的Float值": {
+    "prefix": "getFloatValueByParameterName",
+    "body": [
+      "getFloatValueByParameterName(String ${1:name})"
+    ],
+    "description": "指定参数的Float值"
+  },
+  "指定参数值": {
+    "prefix": "getValueByParameterName",
+    "body": [
+      "getValueByParameterName(String ${1:name})"
+    ],
+    "description": "指定参数值"
+  },
+  "指定参数": {
+    "prefix": "getParameterByName",
+    "body": [
+      "getParameterByName(String ${1:name})"
+    ],
+    "description": "指定参数"
+  },
+  "指定类型的所有参数值": {
+    "prefix": "getValuesByParameterType",
+    "body": [
+      "getValuesByParameterType(String ${1:type})"
+    ],
+    "description": "指定类型的所有参数值"
+  },
+  "参数是否标准": {
+    "prefix": "isParameterStandard",
+    "body": [
+      "isParameterStandard(String ${1:paramName}, Map<String, BaseModel> ${2:standardModelMap})"
+    ],
+    "description": "参数是否标准"
+  },
+  "根模型": {
+    "prefix": "getRoot",
+    "body": [
+      "getRoot()"
+    ],
+    "description": "根模型"
+  },
+  "根模型或主模型": {
+    "prefix": "getRootOrMainModel",
+    "body": [
+      "getRootOrMainModel()"
+    ],
+    "description": "根模型或主模型"
+  },
+  "子孙和祖先模型": {
+    "prefix": "getPosterityAndAncestor",
+    "body": [
+      "getPosterityAndAncestor()"
+    ],
+    "description": "子孙和祖先模型"
+  },
+  "子孙模型": {
+    "prefix": "posterityModel",
+    "body": [
+      "posterityModel()"
+    ],
+    "description": "子孙模型"
+  },
+  "祖先模型": {
+    "prefix": "ancestorModel",
+    "body": [
+      "ancestorModel()"
+    ],
+    "description": "祖先模型"
+  },
+  "转化后的参数Map": {
+    "prefix": "getParsedParamMap",
+    "body": [
+      "getParsedParamMap()"
+    ],
+    "description": "转化后的参数Map"
+  },
+  "指定转化后的参数": {
+    "prefix": "getParsedParam",
+    "body": [
+      "getParsedParam(String ${1:paramName})"
+    ],
+    "description": "指定转化后的参数"
+  },
+  "是否是根模型": {
+    "prefix": "isRootModel",
+    "body": [
+      "isRootModel()"
+    ],
+    "description": "是否是根模型"
+  },
+  "模型绝对位置": {
+    "prefix": "getAbsPosition",
+    "body": [
+      "getAbsPosition()"
+    ],
+    "description": "模型绝对位置"
+  },
+  "模型绝对旋转角度": {
+    "prefix": "getAbsRotationDegree",
+    "body": [
+      "getAbsRotationDegree()"
+    ],
+    "description": "模型绝对旋转角度"
+  },
+  "所有叶子模型": {
+    "prefix": "getLeaves",
+    "body": [
+      "getLeaves()"
+    ],
+    "description": "所有叶子模型"
+  },
+  "所有子模型": {
+    "prefix": "getLowerModels",
+    "body": [
+      "getLowerModels()"
+    ],
+    "description": "所有子模型"
+  },
+  "组合模型id": {
+    "prefix": "assemblyModelId",
+    "body": [
+      "assemblyModelId $1"
+    ],
+    "description": "组合模型id"
+  },
+  "位置": {
+    "prefix": "position",
+    "body": [
+      "position $1"
+    ],
+    "description": "位置"
+  },
+  "旋转": {
+    "prefix": "rotate",
+    "body": [
+      "rotate $1"
+    ],
+    "description": "旋转"
+  },
+  "缩放": {
+    "prefix": "scale",
+    "body": [
+      "scale $1"
+    ],
+    "description": "缩放"
+  },
+  "子模型集合": {
+    "prefix": "subModels",
+    "body": [
+      "subModels $1"
+    ],
+    "description": "子模型集合"
+  },
+  "获取旋转角度值": {
+    "prefix": "getRotateDegree",
+    "body": [
+      "getRotateDegree()"
+    ],
+    "description": "获取旋转角度值"
+  },
+  "获取真分类": {
+    "prefix": "getProdCatId",
+    "body": [
+      "getProdCatId()"
+    ],
+    "description": "获取真分类"
+  },
+  "组合的顶层模型中是否有组件新增": {
+    "prefix": "isAddition",
+    "body": [
+      "isAddition(Map<String, BaseModel> ${1:standardModelMap})"
+    ],
+    "description": "组合的顶层模型中是否有组件新增"
+  },
+  "组合的顶层模型中是否有组件减少": {
+    "prefix": "isReduction",
+    "body": [
+      "isReduction(Map<String, BaseModel> ${1:standardModelMap})"
+    ],
+    "description": "组合的顶层模型中是否有组件减少"
+  },
+  "前挡水轮廓商品": {
+    "prefix": "frontProfileBrandGood",
+    "body": [
+      "frontProfileBrandGood $1"
+    ],
+    "description": "前挡水轮廓商品"
+  },
+  "后挡水轮廓商品": {
+    "prefix": "backProfileBrandGood",
+    "body": [
+      "backProfileBrandGood $1"
+    ],
+    "description": "后挡水轮廓商品"
+  },
+  "台面上的洞": {
+    "prefix": "holes",
+    "body": [
+      "holes $1"
+    ],
+    "description": "台面上的洞"
+  },
+  "获取前挡水高度": {
+    "prefix": "getFrontProfileScaleHeight",
+    "body": [
+      "getFrontProfileScaleHeight()"
+    ],
+    "description": "获取前挡水高度"
+  },
+  "获取台面厚度": {
+    "prefix": "getExtrusionHeight",
+    "body": [
+      "getExtrusionHeight()"
+    ],
+    "description": "获取台面厚度"
+  },
+  "获取台面切割线": {
+    "prefix": "getConnectionLines",
+    "body": [
+      "getConnectionLines()"
+    ],
+    "description": "获取台面切割线"
+  },
+  "获取见光下台面块": {
+    "prefix": "getBottomBlocks",
+    "body": [
+      "getBottomBlocks()"
+    ],
+    "description": "获取见光下台面块"
+  },
+  "获取前挡水": {
+    "prefix": "getFrontWaterRetainers",
+    "body": [
+      "getFrontWaterRetainers()"
+    ],
+    "description": "获取前挡水"
+  },
+  "获取台面轮廓": {
+    "prefix": "getOutlinePath",
+    "body": [
+      "getOutlinePath()"
+    ],
+    "description": "获取台面轮廓"
+  },
+  "获取台面的洞": {
+    "prefix": "getHoles",
+    "body": [
+      "getHoles()"
+    ],
+    "description": "获取台面的洞"
+  },
+  "获取离地高度": {
+    "prefix": "getOffsetHeight",
+    "body": [
+      "getOffsetHeight()"
+    ],
+    "description": "获取离地高度"
+  },
+  "关联的水平台面": {
+    "prefix": "relatedCountertop",
+    "body": [
+      "relatedCountertop $1"
+    ],
+    "description": "关联的水平台面"
+  },
+  "获取侧台面的包围盒": {
+    "prefix": "getOutlineBox",
+    "body": [
+      "getOutlineBox()"
+    ],
+    "description": "获取侧台面的包围盒"
+  },
+  "获取高台面": {
+    "prefix": "getHighCountertop",
+    "body": [
+      "getHighCountertop()"
+    ],
+    "description": "获取高台面"
+  },
+  "获取低台面": {
+    "prefix": "getLowCountertop",
+    "body": [
+      "getLowCountertop()"
+    ],
+    "description": "获取低台面"
+  },
+  "判断是否在指定房间": {
+    "prefix": "isInRoom",
+    "body": [
+      "isInRoom(FRoom ${1:room})"
+    ],
+    "description": "判断是否在指定房间"
+  },
+  "判断是否靠墙": {
+    "prefix": "isLeanOnRoom",
+    "body": [
+      "isLeanOnRoom(FRoom ${1:room})"
+    ],
+    "description": "判断是否靠墙"
+  },
+  "侧台面块是否落地": {
+    "prefix": "isOnGround",
+    "body": [
+      "isOnGround(Float ${1:groundHeight}, Float ${2:tolerance})"
+    ],
+    "description": "侧台面块是否落地"
+  },
+  "使用默认参数判断模型是否落地": {
+    "prefix": "isOnGround",
+    "body": [
+      "isOnGround()"
+    ],
+    "description": "使用默认参数判断模型是否落地"
+  },
+  "获取左缩进值": {
+    "prefix": "getLeftIndentationLength",
+    "body": [
+      "getLeftIndentationLength()"
+    ],
+    "description": "获取左缩进值"
+  },
+  "获取右缩进值": {
+    "prefix": "getRightIndentationLength",
+    "body": [
+      "getRightIndentationLength()"
+    ],
+    "description": "获取右缩进值"
+  },
+  "获取轮廓中的所有点": {
+    "prefix": "getMoldingPathPoints",
+    "body": [
+      "List getMoldingPathPoints()"
+    ],
+    "description": "获取轮廓中的所有点"
+  },
+  "获取倒角点的切斜边长度": {
+    "prefix": "getLineLength",
+    "body": [
+      "Float getLineLength(ParamPoint ${1:paramPoint})"
+    ],
+    "description": "获取倒角点的切斜边长度"
+  },
+  "安装方式": {
+    "prefix": "moldingType",
+    "body": [
+      "moldingType $1"
+    ],
+    "description": "安装方式"
+  },
+  "获取全局变量id": {
+    "prefix": "getGlobalId",
+    "body": [
+      "getGlobalId()"
+    ],
+    "description": "获取全局变量id"
+  },
+  "获取引用名": {
+    "prefix": "getName",
+    "body": [
+      "getName()"
+    ],
+    "description": "获取引用名"
+  },
+  "获取变量值": {
+    "prefix": "getValue",
+    "body": [
+      "getValue()"
+    ],
+    "description": "获取变量值"
+  },
+  "获取公式": {
+    "prefix": "getFormula",
+    "body": [
+      "getFormula()"
+    ],
+    "description": "获取公式"
+  },
+  "是否可编辑": {
+    "prefix": "isEditable",
+    "body": [
+      "isEditable()"
+    ],
+    "description": "是否可编辑"
+  },
+  "获取公式展示名": {
+    "prefix": "getFormulaDisplayName",
+    "body": [
+      "getFormulaDisplayName()"
+    ],
+    "description": "获取公式展示名"
+  },
+  "是否需要": {
+    "prefix": "isRequired",
+    "body": [
+      "isRequired()"
+    ],
+    "description": "是否需要"
+  },
+  "获取转换后的参数值": {
+    "prefix": "getParsedValue",
+    "body": [
+      "getParsedValue()"
+    ],
+    "description": "获取转换后的参数值"
+  },
+  "获取最小值": {
+    "prefix": "getMin",
+    "body": [
+      "getMin()"
+    ],
+    "description": "获取最小值"
+  },
+  "获取最大值": {
+    "prefix": "getMax",
+    "body": [
+      "getMax()"
+    ],
+    "description": "获取最大值"
+  },
+  "获取步": {
+    "prefix": "getStep",
+    "body": [
+      "getStep()"
+    ],
+    "description": "获取步"
+  },
+  "获取选项": {
+    "prefix": "getOptionValues",
+    "body": [
+      "getOptionValues()"
+    ],
+    "description": "获取选项"
+  },
+  "获取链接": {
+    "prefix": "getLink",
+    "body": [
+      "getLink()"
+    ],
+    "description": "获取链接"
+  },
+  "加密的商品id": {
+    "prefix": "brandGood.obsBrandGoodId",
+    "body": [
+      "brandGood.obsBrandGoodId"
+    ],
+    "description": "加密的商品id"
+  },
+  "真分类id": {
+    "prefix": "brandGood.transProdCatId",
+    "body": [
+      "brandGood.transProdCatId"
+    ],
+    "description": "真分类id"
+  },
+  "素材类型": {
+    "prefix": "brandGood.itemType",
+    "body": [
+      "brandGood.itemType"
+    ],
+    "description": "素材类型"
+  },
+  "商品名": {
+    "prefix": "brandGood.brandGoodName",
+    "body": [
+      "brandGood.brandGoodName"
+    ],
+    "description": "商品名"
+  },
+  "型号": {
+    "prefix": "brandGood.productNumber",
+    "body": [
+      "brandGood.productNumber"
+    ],
+    "description": "型号"
+  },
+  "产品编码": {
+    "prefix": "brandGood.brandGoodCode",
+    "body": [
+      "brandGood.brandGoodCode"
+    ],
+    "description": "产品编码"
+  },
+  "自定义编码": {
+    "prefix": "brandGood.customCode",
+    "body": [
+      "brandGood.customCode"
+    ],
+    "description": "自定义编码"
+  },
+  "品牌id": {
+    "prefix": "brandGood.brandId",
+    "body": [
+      "brandGood.brandId"
+    ],
+    "description": "品牌id"
+  },
+  "品牌名": {
+    "prefix": "brandGood.brandName",
+    "body": [
+      "brandGood.brandName"
+    ],
+    "description": "品牌名"
+  },
+  "系列id": {
+    "prefix": "brandGood.seriesTagId",
+    "body": [
+      "brandGood.seriesTagId"
+    ],
+    "description": "系列id"
+  },
+  "系列名称": {
+    "prefix": "brandGood.seriesTagName",
+    "body": [
+      "brandGood.seriesTagName"
+    ],
+    "description": "系列名称"
+  },
+  "尺寸 or 规格": {
+    "prefix": "brandGood.dimensions",
+    "body": [
+      "brandGood.dimensions"
+    ],
+    "description": "尺寸 or 规格"
+  },
+  "商品后台描述": {
+    "prefix": "brandGood.description",
+    "body": [
+      "brandGood.description"
+    ],
+    "description": "描述"
+  },
+  "基材": {
+    "prefix": "brandGood.baseTexture",
+    "body": [
+      "brandGood.baseTexture"
+    ],
+    "description": "基材"
+  },
+  "建模账户id": {
+    "prefix": "brandGood.obsAccountId",
+    "body": [
+      "brandGood.obsAccountId"
+    ],
+    "description": "建模账户id"
+  },
+  "是否删除": {
+    "prefix": "brandGood.deleted",
+    "body": [
+      "brandGood.deleted"
+    ],
+    "description": "是否删除"
+  },
+  "商品自定义字段集合": {
+    "prefix": "brandGood.customFields",
+    "body": [
+      "brandGood.customFields"
+    ],
+    "description": "商品自定义字段集合"
+  },
+  "系统id": {
+    "prefix": "obsFieldId",
+    "body": [
+      "obsFieldId"
+    ],
+    "description": "系统id"
+  },
+  "类型": {
+    "prefix": "type",
+    "body": [
+      "type"
+    ],
+    "description": "类型"
+  },
+  "字段编号": {
+    "prefix": "fieldCode",
+    "body": [
+      "fieldCode"
+    ],
+    "description": "字段编号"
+  },
+  "字段名称": {
+    "prefix": "fieldName",
+    "body": [
+      "fieldName"
+    ],
+    "description": "字段名称"
+  },
+  "描述": {
+    "prefix": "description",
+    "body": [
+      "description"
+    ],
+    "description": "描述"
+  },
+  "应用场景": {
+    "prefix": "sceneTypeList",
+    "body": [
+      "sceneTypeList"
+    ],
+    "description": "应用场景"
+  },
+  "字段数据": {
+    "prefix": "data",
+    "body": [
+      "data"
+    ],
+    "description": "字段数据"
+  },
+  "字段值": {
+    "prefix": "value",
+    "body": [
+      "value"
+    ],
+    "description": "字段值"
+  },
+  "链接类型展示值": {
+    "prefix": "linkName",
+    "body": [
+      "linkName"
+    ],
+    "description": "链接类型展示值"
+  },
+  "已选项": {
+    "prefix": "labelValues",
+    "body": [
+      "labelValues"
+    ],
+    "description": "已选项"
+  },
+  "FOption-描述": {
+    "prefix": "label",
+    "body": [
+      "label"
+    ],
+    "description": "FOption-描述"
+  },
+  "获取加密的商品id": {
+    "prefix": "getBrandGood().getObsBrandGoodId",
+    "body": [
+      "getBrandGood().getObsBrandGoodId()"
+    ],
+    "description": "获取加密的商品id"
+  },
+  "获取真分类id": {
+    "prefix": "getBrandGood().getTransProdCatId",
+    "body": [
+      "getBrandGood().getTransProdCatId()"
+    ],
+    "description": "获取真分类id"
+  },
+  "获取素材类型": {
+    "prefix": "getBrandGood().getItemType",
+    "body": [
+      "getBrandGood().getItemType()"
+    ],
+    "description": "获取素材类型"
+  },
+  "获取商品名": {
+    "prefix": "getBrandGood().getBrandGoodName",
+    "body": [
+      "getBrandGood().getBrandGoodName()"
+    ],
+    "description": "获取商品名"
+  },
+  "获取型号": {
+    "prefix": "getBrandGood().getProductNumber",
+    "body": [
+      "getBrandGood().getProductNumber()"
+    ],
+    "description": "获取型号"
+  },
+  "获取产品编码": {
+    "prefix": "getBrandGood().getBrandGoodCode",
+    "body": [
+      "getBrandGood().getBrandGoodCode()"
+    ],
+    "description": "获取产品编码"
+  },
+  "获取自定义编码": {
+    "prefix": "getBrandGood().getCustomCode",
+    "body": [
+      "getBrandGood().getCustomCode()"
+    ],
+    "description": "获取自定义编码"
+  },
+  "获取品牌id": {
+    "prefix": "getBrandGood().getBrandId",
+    "body": [
+      "getBrandGood().getBrandId()"
+    ],
+    "description": "获取品牌id"
+  },
+  "获取品牌名": {
+    "prefix": "getBrandGood().getBrandName",
+    "body": [
+      "getBrandGood().getBrandName()"
+    ],
+    "description": "获取品牌名"
+  },
+  "获取系列id": {
+    "prefix": "getBrandGood().getSeriesTagId",
+    "body": [
+      "getBrandGood().getSeriesTagId()"
+    ],
+    "description": "获取系列id"
+  },
+  "获取系列名称": {
+    "prefix": "getBrandGood().getSeriesTagName",
+    "body": [
+      "getBrandGood().getSeriesTagName()"
+    ],
+    "description": "获取系列名称"
+  },
+  "获取尺寸 or 规格": {
+    "prefix": "getBrandGood().getDimensions",
+    "body": [
+      "getBrandGood().getDimensions()"
+    ],
+    "description": "获取尺寸 or 规格"
+  },
+  "获取描述": {
+    "prefix": "getBrandGood().getDescription",
+    "body": [
+      "getBrandGood().getDescription()"
+    ],
+    "description": "获取描述"
+  },
+  "获取自定义基材": {
+    "prefix": "getBrandGood().getCustomTexture",
+    "body": [
+      "getBrandGood().getCustomTexture()"
+    ],
+    "description": "获取自定义基材"
+  },
+  "获取基材": {
+    "prefix": "getBrandGood().getBaseTexture",
+    "body": [
+      "getBrandGood().getBaseTexture()"
+    ],
+    "description": "获取基材"
+  },
+  "获取建模账户id": {
+    "prefix": "getBrandGood().getObsAccountId",
+    "body": [
+      "getBrandGood().getObsAccountId()"
+    ],
+    "description": "获取建模账户id"
+  },
+  "获取是否删除": {
+    "prefix": "getBrandGood().getDeleted",
+    "body": [
+      "getBrandGood().getDeleted()"
+    ],
+    "description": "获取是否删除"
+  },
+  "获取商品自定义字段集合": {
+    "prefix": "getBrandGood().getCustomFields",
+    "body": [
+      "getBrandGood().getCustomFields()"
+    ],
+    "description": "获取商品自定义字段集合"
+  },
+  "浮点数相等": {
+    "prefix": "FloatUtil.isEqual",
+    "body": [
+      "FloatUtil.isEqual(Float a, Float b)"
+    ],
+    "description": "浮点数相等"
+  },
+  "浮点数不相等": {
+    "prefix": "FloatUtil.isNotEqual",
+    "body": [
+      "FloatUtil.isNotEqual(Float a, Float b)"
+    ],
+    "description": "浮点数不相等"
+  },
+  "浮点数指定精度不相等": {
+    "prefix": "FloatUtil.isNotEqual",
+    "body": [
+      "FloatUtil.isNotEqual(Float a, Float b, float tolerance)"
+    ],
+    "description": "浮点数指定精度不相等"
+  },
+  "浮点数指定精度相等": {
+    "prefix": "FloatUtil.isEqual",
+    "body": [
+      "FloatUtil.isEqual(Float a, Float b, float tolerance)"
+    ],
+    "description": "浮点数指定精度相等"
+  },
+  "浮点数 a 小于 b": {
+    "prefix": "FloatUtil.isLess",
+    "body": [
+      "FloatUtil.isLess(Float a, Float b)"
+    ],
+    "description": "浮点数 a 小于 b"
+  },
+  "顶模型方向搜索模型": {
+    "prefix": "findModel",
+    "body": [
+      "findModel(FCustomModel, BaseDirect.Z_POSITIVE, _modelTree)"
+    ],
+    "description": "顶模型方向搜索模型"
+  },
+  "自身方向搜索模型": {
+    "prefix": "findModelUseModelAbsDirection",
+    "body": [
+      "findModelUseModelAbsDirection(FCustomModel, BaseDirect.Z_POSITIVE, _modelTree)"
+    ],
+    "description": "自身方向搜索模型"
+  },
+  "一维距离": {
+    "prefix": "sizeDistance",
+    "body": [
+      "sizeDistance(m2, m1, BaseDirect.Z_POSITIVE,BaseDirect.Y_POSITIVE)"
+    ],
+    "description": "一维距离"
+  },
+  "最小差值": {
+    "prefix": "rangeMinLimitDistance",
+    "body": [
+      "rangeMinLimitDistance(modelA, modelB, BaseDirect.Z_POSITIVE,BaseDirect.X_POSITIVE)"
+    ],
+    "description": "最小差值"
+  },
+  "最大差值": {
+    "prefix": "rangeMaxLimitDistance",
+    "body": [
+      "rangeMaxLimitDistance(modelA, modelB, BaseDirect.Z_POSITIVE,BaseDirect.X_POSITIVE)"
+    ],
+    "description": "最大差值"
+  },
+  "是否是组件": {
+    "prefix": "isComponent",
+    "body": [
+      "isComponent(Long prodCatId)"
+    ],
+    "description": "是否是组件"
+  },
+  "获取样式变量商品": {
+    "prefix": "getParameterBrandGoods",
+    "body": [
+      "getParameterBrandGoods(model,\"style\")"
+    ],
+    "description": "获取样式变量商品"
+  },
+  "获取轮廓变量商品": {
+    "prefix": "getParameterBrandGoods",
+    "body": [
+      "getParameterBrandGoods(model,\"shape\")"
+    ],
+    "description": "获取轮廓变量商品"
+  },
+  "获取材质商品": {
+    "prefix": "getParameterBrandGoods",
+    "body": [
+      "getParameterBrandGoods(model,\"material\")"
+    ],
+    "description": "获取材质商品"
+  },
+  "获取指定参数的商品": {
+    "prefix": "getParameterBrandGoodByName",
+    "body": [
+      "getParameterBrandGoodByName(model,\"CZ\")"
+    ],
+    "description": "获取指定参数的商品"
+  },
+  "自动矫正参数": {
+    "prefix": "correct",
+    "body": [
+      "correct(model1, \"W\", \"800\")"
+    ],
+    "description": "自动矫正参数"
+  },
+  "自动校正材质": {
+    "prefix": "correct",
+    "body": [
+      "correct(model, \"materialBrandGoodId\",CZ.getValue())"
+    ],
+    "description": "自动校正材质"
+  },
+  "自动删除模型": {
+    "prefix": "delete",
+    "body": [
+      "delete(model2)"
+    ],
+    "description": "自动删除模型"
+  },
+  "锁定方向校正参数": {
+    "prefix": "correct",
+    "body": [
+      "correct(model, \"W\", 300, LockDirection.LEFT)"
+    ],
+    "description": "锁定方向校正参数"
+  },
+  "添加虚拟模型": {
+    "prefix": "addVirtualModel",
+    "body": [
+      "addVirtualModel(model, \"3FO4K0NNYOWM\", 3)"
+    ],
+    "description": "添加虚拟模型"
+  },
+  "自动校正备注": {
+    "prefix": "correctRemark",
+    "body": [
+      "correctRemark(model,\" \")"
+    ],
+    "description": "自动校正备注"
+  },
+  "无感校正参数": {
+    "prefix": "autoCorrect",
+    "body": [
+      "autoCorrect(model1, \"W\", \"800\")"
+    ],
+    "description": "无感校正参数"
+  },
+  "无感校正锁定方向": {
+    "prefix": "autoCorrect",
+    "body": [
+      "autoCorrect(model, \"W\", 300, LockDirection.LEFT)"
+    ],
+    "description": "无感校正锁定方向"
+  },
+  "无感删除模型": {
+    "prefix": "autoDelete",
+    "body": [
+      "autoDelete(model2)"
+    ],
+    "description": "无感删除模型"
+  },
+  "无感添加虚拟模型": {
+    "prefix": "autoAddVirtualModel",
+    "body": [
+      "autoAddVirtualModel(model, \"3FO4K0NNYOWM\", 3)"
+    ],
+    "description": "无感添加虚拟模型"
+  },
+  "无感校正备注": {
+    "prefix": "autoCorrectRemark",
+    "body": [
+      "autoCorrectRemark(model,\" \")"
+    ],
+    "description": "无感校正备注"
+  },
+  "抓取报错信息": {
+    "prefix": "try-catch",
+    "body": [
+      "try {\n\t\n} catch (Exception e) {\n\t_result.getList().add(createParamModelResult(\"异常 - \" + e.getMessage()));\n\t_result.getList().add(createParamModelResult(\"规则执行失败，请将该方案地址发送给管理员进行处理！\"));\n}"
+    ],
+    "description": "抓取报错信息"
+  },
+  "正 X 轴": {
+    "prefix": "BaseDirect.X_POSITIVE",
+    "body": [
+      "BaseDirect.X_POSITIVE"
+    ],
+    "description": "正 X 轴"
+  },
+  "正 Y 轴": {
+    "prefix": "BaseDirect.Y_POSITIVE",
+    "body": [
+      "BaseDirect.Y_POSITIVE"
+    ],
+    "description": "正 Y 轴"
+  },
+  "正 Z 轴": {
+    "prefix": "BaseDirect.Z_POSITIVE",
+    "body": [
+      "BaseDirect.Z_POSITIVE"
+    ],
+    "description": "正 Z 轴"
+  },
+  "负 X 轴": {
+    "prefix": "BaseDirect.X_NEGATIVE",
+    "body": [
+      "BaseDirect.X_NEGATIVE"
+    ],
+    "description": "负 X 轴"
+  },
+  "负 Y 轴": {
+    "prefix": "BaseDirect.Y_NEGATIVE",
+    "body": [
+      "BaseDirect.Y_NEGATIVE"
+    ],
+    "description": "负 Y 轴"
+  },
+  "负 Z 轴": {
+    "prefix": "BaseDirect.Z_NEGATIVE",
+    "body": [
+      "BaseDirect.Z_NEGATIVE"
+    ],
+    "description": "负 Z 轴"
+  }
+}
