@@ -1,6 +1,6 @@
 {
     "name": "kjl-drools-assist",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.80.0"
     },
@@ -42,7 +42,7 @@
     },
     "repository": {
     "type": "git",
-    "url": "N/A"
+    "url": "https://github.com/C-fog/drools.git"
   },
   "publisher": "zhangyuge"
 }
